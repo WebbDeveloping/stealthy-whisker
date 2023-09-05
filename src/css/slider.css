@@ -1,0 +1,149 @@
+/* define keyframes for slide-in animation */
+@keyframes slide-in {
+  from {
+    transform: translateX(-1500px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+/* define keyframes for slide-out animation */
+@keyframes slide-out {
+  from {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(1500px);
+    opacity: 0;
+  }
+}
+
+/* define keyframes for slide-down animation */
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* define keyframes for slide-up animation */
+@keyframes slide-up {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+/* apply animation on slide change */
+.slide.w-slide {
+  position: relative;
+}
+
+.slide.w-slide .slide-content {
+  position: relative;
+  z-index: 2;
+}
+
+.slide.w-slide .slider-background-base {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.slide.w-slide .slider-background-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+.slide.w-slide .slider-background-wrapper .slider-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.slide.w-slide .slide-intro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  text-align: center;
+  width: 100%;
+  max-width: 980px;
+  padding: 0 30px;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+.slide.w-slide .slide-heading {
+  font-size: 50px;
+  line-height: 1.2;
+  color: #fff;
+  margin-bottom: 20px;
+  font-weight: 600;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+.slide.w-slide .link-wrapper {
+  display: inline-block;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+.slide.w-slide .button {
+  font-size: 14px;
+  line-height: 1.2;
+  color: #fff;
+  background-color: #000;
+  border-radius: 40px;
+  padding: 20px 30px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.slide.w-slide .button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.slide.w-slide .w-slide[data-current="1"] .slider-background-wrapper,
+.slide.w-slide .w-slide[data-current="1"] .slide-intro,
+.slide.w-slide .w-slide[data-current="1"] .slide-heading,
+.slide.w-slide .w-slide[data-current="1"] .link-wrapper,
+.slide.w-slide .w-slide[data-current="1"] .button {
+  animation-name: slide-in;
+}
+
+.slide.w-slide .slider-background-wrapper,
+.slide.w-slide .slide-intro,
+.slide.w-slide .slide-heading,
+.slide.w-slide .link-wrapper,
+.slide.w-slide .button {
+  animation-fill-mode: forwards;
+}
